@@ -1,0 +1,236 @@
+/**************************************
+ORGAIZACION LENGUAJES Y COMPILADORES 1
+ESCUELA DE CIENCIAS Y SISTEMAS
+SEGUNDO SEMESTRE DE 2018 
+**************************************/
+
+///------------------------------VAMOS A DEFINIR EL PRIMER ARCHIVO DE CALIFICACION---------------------------------------------///
+
+    global:String="Tu pregunta rebaso mi nivel de IA :'v :'(, Intentalo de nuevo.";
+
+
+    Main:String (pregunta:String){
+        
+        Respuesta:String;
+        Print("El cliente ha hecho una peticion -> "+pregunta);
+
+        If( pregunta == "Hola" || pregunta == "hola" || pregunta =="¿que tal?" || pregunta == "hi"){
+
+            Respuesta = "Hola, Soy Dymon, el bot que te atendera, Dime, ¿En que puedo ayudarte?"; 
+            Return Respuesta; 
+        }
+
+        If ( pregunta == "que tienes" || pregunta == "que ofreces" || pregunta == "Menu"){
+
+            Respuesta = "Con gusto, puedo brindarte informacion sobre Accesorios o Medicamentos, ¿Sobre cual quieres saber algo?";
+            Return Respuesta;
+        }
+
+        If(pregunta == "Accesorios" || pregunta == "accesorios" || pregunta == "accesorio"){
+        Accesorios:String = "Te comento que tenemos clasificados los accesorios por codigo, Ingresa un codigo de de 10 a 50";
+            Return Accesorios;
+        }
+
+        If( pregunta == "Medicamentos" || pregunta == "medicamentos" || pregunta == "medicamento"){
+            Medicamentos:String = "Contamos con los siguientes medicametos, acetaminofen, diclofenaco, tabcin,aspirina, ¿Cúal deseas? ";
+            Return Medicamentos;
+        }
+
+        If(pregunta == "10"){
+            Return Accesorio(5*2);
+        }
+
+        If(pregunta == "20"){   
+            Return Accesorio(2*2+6+10);
+        }
+
+        If(pregunta == "30"){
+            Return Accesorio( 5^2+5);           
+        }
+
+        If(pregunta == "40"){
+        Return Accesorio(40); //-----------------------------modifico
+        }
+
+        If(pregunta == "50"){
+            Res:Int = 25*2;
+            Return Accesorio(Res);
+        }
+
+        If(pregunta == "Acetaminofen" || pregunta == "acetaminofen" || pregunta == "Paracetamol"){          
+            Res:String = Medicamento("acetaminofen");
+            Return Res;
+
+        }
+
+        If(pregunta == "Diclofenaco" || pregunta == "diclofenaco" || pregunta == "diclo"){          
+            Res:String = "diclofenaco";
+            Return Medicamento(Res);
+        }
+
+        If(pregunta == "tabcin" || pregunta == "Tabcin" || pregunta == "Antigripal"){
+            Return Medicamento("tabcin");
+        }
+
+        If(pregunta == "Aspirina" || pregunta == "aspirina" ){
+            Return Medicamento("aspirina");
+        }
+
+        
+        If(pregunta == "otro medicamento"){
+
+            Return Medicamento("otro");
+        }
+
+        If(pregunta == "Gracias" || pregunta =="gracias" || pregunta == "Muchas gracias"){
+            Return "De nada, fue un gusto atenderte, Cuidate.";
+        }
+
+        Return global;
+
+    }
+
+
+ //vamos a validar la div y la mul
+
+ Accesorio:String(cod_producto:Int){
+
+    If(cod_producto == 10){
+        Print("Consulto el producto No. "+cod_producto);
+        Nombre:String = "Audifonos Bluethooth";
+        Descripcion:String = "Audifonos inalambricos marca Sony";
+        Precio:Double = CalcularPrecio(10);
+        Return "Nombre: "+Nombre+" Desc: "+Descripcion+" Precio: "+Precio;
+    }
+
+    If(cod_producto == 20){
+        Print("Consulto el producto No. "+cod_producto);
+        Nombre:String = "Control Scuff Pro Gaming";
+        Descripcion:String = "Mando profesional de videojuegos, version Zhapiro";
+        Precio:Double = CalcularPrecio(20);
+        Return "Nombre: "+Nombre+" Desc: "+Descripcion+" Precio: "+Precio;  
+    } 
+
+    If(cod_producto== 30){
+        Print("Consulto el producto No. "+cod_producto);
+        Nombre:String = "Telefono Movil Samsung XLS 2050";
+        Descripcion:String = "Telefono de gama alta, decima generacion hexa-core";
+        Precio:Double = CalcularPrecio(30);
+        Return "Nombre: "+Nombre+" Desc: "+Descripcion+" Precio: "+Precio;
+    }
+
+    If(cod_producto == 40){
+        Print("Consulto el producto No. "+cod_producto);
+        Nombre:String = "Video juego:  Read Dead Redeption 2";
+        Descripcion:String = "Video juego para consola PS4, 4K-escalados";
+        Precio:Double = CalcularPrecio(40);
+        Return "Nombre: "+Nombre+" Desc: "+Descripcion+" Precio: "+Precio;
+    }Else{
+        Print("Consulto un codigo de producto no registrado -> "+cod_producto);
+        Return "Lo sentimos el codigo de producto ingresado, no esta registrado";
+    }
+
+ }
+
+
+CalcularPrecio:Double(codigo:Int){
+    
+    A1,A2,A3,A4,A5:Double;
+
+    If(codigo > 0 && codigo<=10){
+        A1 = 10.0^4.0 * 10.2 + ( 50.55+10.82);
+    }
+
+    If(codigo >= 20 && codigo < 30 ){
+        A2 = 40.2%10 + (50.0/22.0)+25.5; 
+    } 
+
+    If(codigo != 40 || codigo <= 30 ){
+        A3 = 1.11 - 1.11 - 10.5 + 20.5+(40.55-20.2);
+    }
+
+    If(codigo > 30 || codigo < 50 ){
+        A4 = 10.0/2.0 + 40.0 + 25.0/2.0 + (40%6);
+    }Else{
+        A5 = 10000000000000000.00+(0%10)+0+0+(0/1)+(0*1);
+    }
+
+    Return A1+A2+A3+A4+A5;
+} 
+
+
+ Medicamento:String(nombre:String){
+
+    If(nombre == "diclofenaco"){
+        Print("Consulto el medicamento: "+nombre);
+        cantidad:Int = ConsultarCantidad(25.5);
+        Prescripcion:String = " Dolor leve de cabeza, Sensibilidad, Inflamacion, Rigdez causada por los cursos de sistemas";
+        Return "Es bueno para: "+Prescripcion+ " Cantidad Disponible: "+cantidad;  //------------modifico Prescripcion       
+    }
+
+    If(nombre == "acetaminofen"){
+        Print("Consulto el medicamento: "+nombre);
+        cantidad : Int = ConsultarCantidad(35.5);
+        Prescripcion:String= " Dolores musculares, Periodos menstruales , Resfriado , Dolor de garganta";
+        Return "Es bueno para: "+Prescripcion+ " Cantidad Disponible: "+cantidad;     
+    }
+
+    If(nombre == "tabcin"){
+        Print("Consulto el medicamento: "+nombre);
+        cantidad:Int = ConsultarCantidad(45.5);
+        Prescripcion:String= " Antigripal , Contra los sitomas de la tos, Reduce la fiebre, Contra el dolor de kokoro por el desprecio de ella";
+        Return "Es bueno para: "+Prescripcion+ " Cantidad Disponible: "+cantidad; 
+    }
+
+    If( nombre  == "aspirina"){
+        Print("Consulto el medicamento: "+nombre);
+        cantidad:Int = ConsultarCantidad(55.5);
+        Prescripcion:String= " Contra la artritis, Osteoartritis, Lupus eritematoso, Trastornos reumatologicos.";
+        Return "Es bueno para: "+Prescripcion+ " Cantidad Disponible: "+cantidad; 
+    }
+
+    If(nombre == "otro"){
+        Print("Consulto el medicamento: "+nombre);
+        Return "Lo sentimos, no contamos con el medicamento que usted consulto";
+        cantidad:Int = ConsultarCantidad(0.5);
+        Prescripcion:String= " esto esta mal :(";
+        Return "Es bueno para: "+Prescripcion+ " Cantidad Disponible: "+cantidad; 
+    }
+
+    Return "ERRO,ERROR,ERROR";
+ }
+
+
+ ConsultarCantidad:Int(cant:Double){
+
+    local:Int = 50;
+    local2:Int=100;
+
+    If(cant == 25.5 && True || False ){
+        Return (5^2)-(2^3)+(2^2)+(3^4);
+    }
+
+    If(cant != 25.5 && cant == 35.50 || False){
+        anidada:Int = 4;
+        Return (local2/anidada)+0;
+    }
+
+    If( ( True || False ) && cant == 45.5 && ( 10 > 5 && 40 == 40)){
+        anidada:Int=5;
+        anidada = (anidada+local2)+(local%10)+(local*2);
+        Return anidada;
+    }
+
+    If( (10.5 < 10.5 || False ) || ( 50.01 > 50.00 ) && cant == 55.5 ){
+        anidada:Int = 2;
+        anidada2:Int = 4;
+        Return anidada^anidada2 + local2 -local;
+    }
+
+    If(cant == 0.500000 && !False ){
+        Return -10000*(1)+(10^0);
+    }
+
+    Return 10;
+
+ }

@@ -1,0 +1,17 @@
+Hola
+Menu
+Accesorios
+10
+20
+30
+40
+50
+Medicamentos
+Acetaminofen
+Diclofenaco
+tabcin
+Aspirina
+otro medicamento
+Gracias
+Saber
+

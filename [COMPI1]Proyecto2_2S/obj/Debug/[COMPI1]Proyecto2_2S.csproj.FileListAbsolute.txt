@@ -1,0 +1,17 @@
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\[COMPI1]Proyecto2_2S.csproj.ResolveComReference.cache
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\_COMPI1_Proyecto2_2S.Form1.resources
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\_COMPI1_Proyecto2_2S.Properties.Resources.resources
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\[COMPI1]Proyecto2_2S.csproj.GenerateResource.cache
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\[COMPI1]Proyecto2_2S.csproj.CoreCompileInputs.cache
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\[COMPI1]Proyecto2_2S.exe.config
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\[COMPI1]Proyecto2_2S.exe
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\[COMPI1]Proyecto2_2S.pdb
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\Irony.dll
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\[COMPI1]Proyecto2_2S.csproj.CopyComplete
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\[COMPI1]Proyecto2_2S.exe
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\[COMPI1]Proyecto2_2S.pdb
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\itextsharp.dll
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\itextsharp.xtra.dll
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\bin\Debug\itextsharp.xml
+C:\Users\Alexander\Documents\Visual Studio 2017\[COMPI1]Proyecto2_2S\[COMPI1]Proyecto2_2S\obj\Debug\[COMPI1]Proyecto2_2S.csprojAssemblyReference.cache

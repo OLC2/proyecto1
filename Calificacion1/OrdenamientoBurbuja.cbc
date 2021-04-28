@@ -1,0 +1,34 @@
+Main:String(id : String)
+{
+	aux:Int;
+	cambios:Boolean=False;
+	arreglo:Int[5]={5,1,2,4,3};
+
+	While(True){
+		cambios = False;
+		For(i:Int=1; i < 5; i++)
+		{
+			If(arreglo[i]<arreglo[i-1])
+			{
+				aux = arreglo[i];
+				arreglo[i] = arreglo[i-1];
+				arreglo[i-1] = aux;
+				cambios = True;
+			}
+		}
+		If(cambios == False)
+		{
+			Break;
+		}
+
+	}
+
+	For(i:Int=0; i < 5; i++){
+		Print(arreglo[i]);
+	}
+	
+	If(!(!('a'<='a'))){
+		Print("a es mayor a a");
+	}
+
+}

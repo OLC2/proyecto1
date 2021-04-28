@@ -1,0 +1,70 @@
+    bandera : Boolean = False;
+
+    telefonos:String() {
+        bandera = True;
+        contador:Double = 1.0;
+        cadenaTelefono:String = "Telefonos";
+        cadenaTelefono = "";
+        marca:String = "Samsung";
+        telefono:String = "Telefono";
+        While (contador < 10 && contador >= 1 && bandera) {
+            aux:String = "";
+            If (marca == "Samsung") {
+                precio:Double = obtenerPrecio(contador);
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Apple";
+            } Else {
+                precio:Double = obtenerPrecio(contador, "Apple");
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Samsung";
+            }
+            cadenaTelefono = cadenaTelefono + aux;
+            contador = contador + 1;
+
+        }
+        Return cadenaTelefono;
+    }
+
+    obtenerPrecio:Double(i:Double) {
+    precio:Double = 1500 + i - obtenerPrecio(1500 + 1.0, 20.00 / 100);
+        Return precio;
+    }
+
+    obtenerPrecio:Double(precio1:Double,descuento:Double) {
+        precio:Double = (precio1) * descuento;
+        Return precio;
+    }
+
+    obtenerPrecio:Double(i:Double,marca:String) {
+        precio:Double = 0;
+        If (marca == "Apple") {
+            precio = 1600 + i + (1500) * (15 / 100);
+        }
+        Return precio;
+    }
+
+    telefonos2:String() {
+        bandera = True;
+        contador:Double = 9.0;
+        cadenaTelefono:String = "Telefonos";
+        cadenaTelefono = "";
+        marca:String = "Samsung";
+        telefono:String = "Telefono";
+        Do {
+            aux:String = "";
+            If (marca == "Samsung") {
+                precio:Double = obtenerPrecio(contador);
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Apple";
+                } Else {
+                precio:Double = obtenerPrecio(contador, "Apple");
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Samsung";
+            }
+            cadenaTelefono = cadenaTelefono + aux;
+            contador = contador - 1;
+
+        } While (contador > 0 && contador < 9 && bandera);
+        Return cadenaTelefono;
+    }
+

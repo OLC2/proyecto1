@@ -1,0 +1,261 @@
+Import "calificacion22.cbc";
+Import "calificacion23.cbc";    
+
+bandera : Boolean = False; //--------modificado
+horario: String; //-------modificado
+
+    precioCompu:Int[9];
+    compu:String[9];
+
+Main:String(mensaje:String){
+        If(mensaje == "Hola" || mensaje == "hi" || mensaje == "hello"){
+            Return "Hola "+GetUser();
+        }Else{
+            Return menu(mensaje);
+        }
+    }
+    
+    menu:String(cadena:String){
+        respuesta:String="";
+        Switch(cadena){
+            Case "menu":
+                respuesta="inFormacion\n"+"hogar\naudio\ntelefonos"+"\ncomputadoras"+"\nhorarios\nsucursales";
+                Break;
+            Case "informacion":
+                respuesta="Electronica S.A es una empresa de origen estadounidense que se dedica a la venta de aparatos electronicos. Escriba menu si quiere ver los productos o quiere saber mas de la empresa.";
+                Break;
+            Case "hogar":
+                respuesta="Estufas\nHornos\nLavanderia\nRefrigeradoras\nSecadoras";
+                Break;
+            Case "audio":
+                estado:Int=5;
+            Case "sonido":
+                respuesta=audio();
+                Break;
+            Case "telefonos":
+                respuesta = telefonos();
+                Break;
+            Case "celulares":
+                respuesta = telefonos2();
+                Break;
+            Case "computadoras":
+                respuesta=computadoras();
+                Break;
+            Case "horarios":
+                horarios();
+                respuesta = horario;
+                Break;
+            Case "avanzada":
+
+                //fibb : Int = factorial(6);
+                //fibb2 : Int = factorial(2);
+                respuesta=factorial(6)+"";
+                //respuesta=factorial(fibonacci(6)+factorial(2))+"";
+                Break;
+            Case "sucursales":
+                respuesta="Error :v";
+                Break;
+            Default:
+                If(cadena.CompareTo("telefonos")){
+                    respuesta = telefonos();
+                    Break;
+                }
+                If(cadena.CompareTo("horarios")){
+                    horarios();
+                    respuesta = horario;
+                }
+                
+                If(cadena.CompareTo("hola")){
+                    respuesta = "Hola "+GetUser();
+                    Break;
+                }
+                If(cadena.CompareTo("informacion")){
+                    respuesta="Electronica S.A es una empresa de origen estadounidense que se dedica a la venta de aparatos electronicos. Escriba menu si quiere ver los productos o quiere saber mas de la empresa.";
+                }
+                respuesta = "Error :v";
+                //otra cosa
+        }
+        Return respuesta;
+    }
+    
+    
+    audio:String(){
+        cadenaAudio:String;
+        audio1,audio2,audio3:String;
+        audio1="auriculares";
+        audio2="bocinas";
+        audio3="Equipo de sonido";
+        cadenaAudio=audio1+"\n";
+        cadenaAudio=cadenaAudio+audio2+"\n"+audio3;
+        Return cadenaAudio;
+    }
+    
+    computadoras:String(){
+        cadenaCompu:String="";
+        compu[0]="hp, precio:200";
+        precioCompu[0]=200;
+        compu[1]="compac, precio:500";
+        precioCompu[1]=500;
+        compu[2]="dell, precio:100";
+        precioCompu[2]=100;
+        compu[3]="sony, precio:400";
+        precioCompu[3]=400;
+        compu[4]="toshiba, precio:300";
+        precioCompu[4]=500;
+        compu[5]="lenovo, precio:250";
+        precioCompu[5]=250;
+        compu[6]="apple, precio:900";
+        precioCompu[6]=900;
+        compu[7]="acer, precio:666";
+        precioCompu[7]=666;
+        compu[8]="samsung, precio:333";
+        precioCompu[8]=333;
+        cadenaCompu=burbuja();
+        Return cadenaCompu;
+    }
+    
+    burbuja:String()
+    {
+        For( i:Int = 0; i < 9 - 1; i++)
+        {
+            For( j:Int = 0; j < 9 - 1; j++)
+            {
+                If(precioCompu[j] < precioCompu[j + 1])
+                {
+                    tmpCompu:String=compu[j+1];
+                    tmp:Int = precioCompu[j+1];
+                    compu[j+1]=compu[j];
+                    precioCompu[j+1] = precioCompu[j];
+                    compu[j]=tmpCompu;
+                    precioCompu[j] = tmp;
+                }
+            }
+        }
+
+        cadenaBurbuja:String="";
+        For(k:Int = 0;k < 9; k++)
+        {
+            //System.out.prInt(compu[i]+"\n");
+            cadenaBurbuja=cadenaBurbuja+compu[k]+"\n";
+        }
+        Return cadenaBurbuja;
+    }
+
+
+//--------------------------------------CALIFICACION22-----------------------
+
+    telefonos:String() {
+        bandera = True;
+        contador:Double = 1.0;
+        cadenaTelefono:String = "Telefonos";
+        cadenaTelefono = "";
+        marca:String = "Samsung";
+        telefono:String = "Telefono";
+        While (contador < 10 && contador >= 1 && bandera) {
+            aux:String = "";
+            If (marca == "Samsung") {
+                precio:Double = obtenerPrecio(contador);
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Apple";
+            } Else {
+                precio:Double = obtenerPrecio(contador, "Apple");
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Samsung";
+            }
+            cadenaTelefono = cadenaTelefono + aux;
+            contador = contador + 1;
+
+        }
+        Return cadenaTelefono;
+    }
+
+    obtenerPrecio:Double(i:Double) {
+        precio:Double = 1500 + i - obtenerPrecio(1500 + 1.0, 20.00 / 100);
+        Return precio;
+    }
+
+    obtenerPrecio:Double(precio1:Double,descuento:Double) {
+        precio:Double = (precio1) * descuento;
+        Return precio;
+    }
+
+    obtenerPrecio:Double(i:Double,marca:String) {
+        precio:Double = 0.0;
+        If (marca == "Apple") {
+            precio = 1600 + i + (1500) * (15 / 100);
+        }
+        Return precio;
+    }
+
+    telefonos2:String() {
+        bandera = True;
+        contador:Double = 9.0;
+        cadenaTelefono:String = "Telefonos";
+        cadenaTelefono = "";
+        marca:String = "Samsung";
+        telefono:String = "Telefono";
+        Do {
+            aux:String = "";
+            If (marca == "Samsung") {
+                precio:Double = obtenerPrecio(contador);
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Apple";
+            } Else {
+                precio:Double = obtenerPrecio(contador, "Apple");
+                aux = telefono + "_" + contador + " marca: " + marca + " precio:" + precio + "\n";
+                marca = "Samsung";
+            }
+            cadenaTelefono = cadenaTelefono + aux;
+            contador = contador - 1;
+
+        } While (contador > 0 && contador < 9 && bandera) //------------------------------modificado
+        Return cadenaTelefono;
+    }
+
+//--------------------------------CALIFICACION23-----------------------------------
+    horarios:Void() {
+        horario = "Lunes-Viernes: ";
+        For (i:Int = 0; i < 9; i++) {
+            j:Int = i + 8;
+            tiempo:String = "";
+            If (j < 12) {
+                tiempo = "AM";
+            } Else {
+                tiempo = "PM";
+            }
+            If (j == 8) {
+                horario = horario + j + ":00" + tiempo + " a ";
+            }
+            If (j == 16) {
+                horario = horario + j + ":00" + tiempo;
+            }
+        }
+
+    }
+
+    fibonacci:Int(n:Int) {
+        If (n > 1) {
+            Return fibonacci(n - 1) + fibonacci(n - 2);  //función recursiva
+        } Else {  // caso base
+            If (n == 1){
+                Return 1;
+            }Else{
+                If (n == 0){
+                    Return 0;
+                }Else{
+                    //System.out.prIntln("Debes ingresar un tamaño mayor o igual a 1");
+                    Return -1;
+                }
+            }
+            
+        }
+    }
+    
+    factorial:Int(num:Int){
+        If(num == 0){
+            Return 1;
+        }
+        Else{
+            Return num * factorial(num-1);
+        }
+    }

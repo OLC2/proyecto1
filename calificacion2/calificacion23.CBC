@@ -1,0 +1,48 @@
+
+    horario: String;
+    horarios:Void() {
+        horario = "Lunes-Viernes: ";
+        For (i:Int = 0; i < 9; i++) {
+            j:Int = i + 8;
+            tiempo:String = "";
+            If (j < 12) {
+                tiempo = "AM";
+            } Else {
+                tiempo = "PM";
+            }
+            If (j == 8) {
+                horario = horario + j + ":00" + tiempo + " a ";
+            }
+            If (j == 16) {
+                horario = horario + j + ":00" + tiempo;
+            }
+        }
+
+    }
+
+    fibonacci:Int(n:Int) {
+        If (n > 1) {
+            Return fibonacci(n - 1) + fibonacci(n - 2);  //función recursiva
+        } Else {  // caso base
+            If (n == 1){
+                Return 1;
+            }Else{
+                If (n == 0){
+                    Return 0;
+                }Else{
+                    //System.out.prIntln("Debes ingresar un tamaño mayor o igual a 1");
+                    Return -1;
+                }
+            }
+            
+        }
+    }
+    
+    factorial:Int(num:Int){
+        If(num == 0){
+            Return 1;
+        }
+        Else{
+            Return num * factorial(num-1);
+        }
+    }
